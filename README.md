@@ -8,6 +8,7 @@ The purpose of this project is to conduct a brief market and customer analysis t
 3. How much can we spend on marketing to acquire new customers
 
 The SQL file, database and report can be found in the SQL - Market & Customer Analysis folder.
+Database, store.db, was downloaded from https://dq-content.s3.amazonaws.com/600/stores.db
 
 ## Project 2: Python - Student Engagement Analysis
 
@@ -20,7 +21,7 @@ This project is an exploratory analysis of student engagement data.
 
 The Jupyter Notebook and report can be found in the Python - Student Engagement Analysis folder.
 
-## Project 3: R - LPA 
+## Project 3: R - LPA Student Engagement
 
 This is an expansion of the previous project, which uses the tidyLPA package in R to see if engagement is truly decreasing. 
 
