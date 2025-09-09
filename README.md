@@ -30,3 +30,16 @@ Through a literature review, the common determiners of effort in a behavioural f
 LPA Process: The LPA was used to classify students into high, moderate, or low engagement profiles based on their engagement patterns. This allows for a deeper understanding of the distribution of engagement levels within the two groups and how these profiles differ across the two time periods.
 
 The Jupyter Notebook, summarized report and in depth research paper can be found in the R - LPA Student Engagement folder.
+
+## Project 4: Tableau - British Airways Review Dashboard
+
+For my INFO419 Info Visualization course, I have had the chance to learn about data literacy and retention, and how to influence people's knowledge using data visualization. A part of this course involved using tableau to incorporate good design choices discussed in class and present information from a data set.
+
+My process for creating this dashboard involved:
+
+1. Researching different design principles that allowed better data retention from an audience
+2. Learning how to approach using an unfamiliar software, utilizing the Tableau Learning Library and the Tableau Help page to incorporate features not taught in the classroom.
+3. Taking my time to ensure that the dashboard features used were the most effective depending on the type of information I wanted to convey
+The dashboard can be found below:
+
+https://public.tableau.com/shared/55JZKXZ93?:display_count=n&:origin=viz_share_link
