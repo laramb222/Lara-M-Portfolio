@@ -174,37 +174,12 @@ LIMIT 5;
 
 -- Q3: How much can we spend on acquiring new customers
 
-WITH payment_with_year_month_table AS (
-    SELECT *, 
-		CAST(SUBSTR(paymentDate, 1,4) AS INTEGER)*100 + CAST(SUBSTR(paymentDate, 6,7) AS INTEGER) AS year_month
-    FROM payments p
-),
-customers_by_month_table AS (
-	SELECT p1.year_month, COUNT(*) AS number_of_customers, SUM(p1.amount) AS total
-	FROM payment_with_year_month_table p1
-    GROUP BY p1.year_month
-),
-new_customers_by_month_table AS (
-	SELECT p1.year_month, 
-		COUNT(DISTINCT customerNumber) AS number_of_new_customers,
-		SUM(p1.amount) AS new_customer_total,
-        (SELECT number_of_customers FROM customers_by_month_table c WHERE c.year_month = p1.year_month) AS number_of_customers,
-        (SELECT total FROM customers_by_month_table c WHERE c.year_month = p1.year_month) AS total
-	FROM payment_with_year_month_table p1
-    WHERE p1.customerNumber NOT IN (SELECT customerNumber
-                                    FROM payment_with_year_month_table p2
-                                    WHERE p2.year_month < p1.year_month)
-    GROUP BY p1.year_month
-),
--- Calculate actual profit per customer using order details and product costs
-customer_profits AS (
-    SELECT o.customerNumber,
-		SUM(od.quantityOrdered * (od.priceEach - p.buyPrice)) AS customer_profit
-    FROM orders o
-    JOIN orderdetails od ON o.orderNumber = od.orderNumber
-    JOIN products p ON od.productCode = p.productCode
-    GROUP BY o.customerNumber
+WITH money_in_by_customer_table AS (
+	SELECT o.customerNumber, SUM(quantityOrdered * (priceEach - buyPrice)) AS revenue
+	FROM products p
+	JOIN orderdetails od ON p.productCode = od.productCode
+	JOIN orders o ON o.orderNumber = od.orderNumber
+	GROUP BY o.customerNumber
 )
-SELECT 
-    ROUND(AVG(customer_profit), 6) AS average_customer_ltv
-FROM customer_profits;
+SELECT AVG(mc.revenue) AS ltv
+FROM money_in_by_customer_table mc;
