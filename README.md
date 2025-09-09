@@ -18,10 +18,14 @@ The project has the assumption that engagement with the Mr Kato online module is
 
 This project is an exploratory analysis of student engagement data.
 
-## Project 3: R - Classifying and Comparing Student Engagement Groups
+The Jupyter Notebook and report can be found in the Python - Student Engagement Analysis folder.
+
+## Project 3: R - LPA 
 
 This is an expansion of the previous project, which uses the tidyLPA package in R to see if engagement is truly decreasing. 
 
 Through a literature review, the common determiners of effort in a behavioural framework are time and effort. As the data does not provide cohort information, we will simulate the difference in engagement across cohorts (over time) by splitting the dataset in half based on the time of the first interaction.
 
 LPA Process: The LPA was used to classify students into high, moderate, or low engagement profiles based on their engagement patterns. This allows for a deeper understanding of the distribution of engagement levels within the two groups and how these profiles differ across the two time periods.
+
+The Jupyter Notebook, summarized report and in depth research paper can be found in the R - LPA Student Engagement folder.
